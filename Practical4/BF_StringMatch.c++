@@ -1,9 +1,10 @@
 #include <iostream>
 using namespace std;
 
-void naivePatternSearch(string mainString, string pattern, int array[], int *index) {
-   int patLen = pattern.size();
-   int strLen = mainString.size();
+void naivePatternSearch(string mainString, string pattern, int array[], int *index) { //function to search the pattern
+   int patLen = pattern.size(); //len of the pattern
+
+   int strLen = mainString.size(); //len of the string
 
    for(int i = 0; i<=(strLen - patLen); i++) {
       int j;
@@ -14,7 +15,7 @@ void naivePatternSearch(string mainString, string pattern, int array[], int *ind
 
       if(j == patLen) {     //the pattern is found
          (*index)++;
-         array[(*index)] = i;
+         array[(*index)] = i; //return the index of the first occurence of the pattern
       }
    }
 }
